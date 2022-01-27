@@ -114,7 +114,7 @@ getLocalVideo({
             console.log("call denied")
         }
     });
-// Responde la llamada mediante un alert: 
+// Responde la llamada mediante un alert:
 
     document.getElementById('call_button').addEventListener('click', function(){
         console.log("calling a peer:" + peer_id);

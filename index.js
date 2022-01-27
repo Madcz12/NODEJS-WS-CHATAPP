@@ -29,7 +29,7 @@ io.on('connection', (socket) =>{
     });
 
     socket.on('chat:typing', (data) =>{
-        // cuando quiero emitir un evento a todos menos a mí, se usa broadcast
+        // cuando quiero emitir un evento a todos menos a mí, se usa broadcast:
         socket.broadcast.emit('chat:typing', data);
     })
 });
