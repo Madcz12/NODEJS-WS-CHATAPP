@@ -38,7 +38,7 @@ socket.on('chat:typing', function(data){
 
 /* video chat */
 
-// get the local video and display it with permission
+// Obtiene el video local y da permisos a la computadora para acceder a los dispositivos multimedia:
 function getLocalVideo(callbacks){ 
     navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia;
     var constraints = {
@@ -67,9 +67,9 @@ getLocalVideo({
     var peer_id;
 
 
-// creating a peer connection with the peer obj
+// Creando un objeto peer para establecer una conexión: 
     var peer = new Peer();
-// display  the peer id in the html
+// Muestra el ID del peer en el HTML: 
     peer.on('open', function(){
         document.getElementById("displayId").innerHTML = peer.id 
     })
@@ -85,7 +85,7 @@ getLocalVideo({
         alert("an error has happened" + err);
         console.log(err);
     })
-// onclick with the connection button = expose ice info
+// onclick with the connection button = expose ice info || evento onclick del boton que muestra el ID del cliente 
 
     document.getElementById('conn_button').addEventListener('click', function(){
         peer_id = document.getElementById("connId").value;
@@ -96,7 +96,7 @@ getLocalVideo({
             return false;
         }
     })
-// call on click (offer and answer is enchanged)
+// Función del botón de llamada, la respuesta es intercambiada
 
     peer.on('call', function(call){
         var acceptCall = confirm("Do you Want to Answer This Call?");
@@ -114,7 +114,7 @@ getLocalVideo({
             console.log("call denied")
         }
     });
-// ask to call
+// Responde la llamada mediante un alert: 
 
     document.getElementById('call_button').addEventListener('click', function(){
         console.log("calling a peer:" + peer_id);
