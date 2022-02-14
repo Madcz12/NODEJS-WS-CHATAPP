@@ -129,4 +129,7 @@ getLocalVideo({
         })
     })
 // accept the call
+    document.getElementById('upload_button').addEventListener('click', function(){
+        
+    })
 // display the remote video and local video on the clients
